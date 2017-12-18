@@ -60,6 +60,24 @@
 			<parents>system_sie_laduje komunikat_bledu</parents>
 			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
+		<cpt id="Awaria_RAM">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>slychac_wentylatory slychac_sygnaly_glosniczka_systemowego czarny_ekran</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_zasilacza">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>slychac_wentylatory nie_wlacza_sie</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_karty_graficznej">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>slychac_sygnaly_glosniczka_systemowego slychac_wentylatory czarny_ekran</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
 	</nodes>
 	<extensions>
 		<genie version="1.0" app="GeNIe 2.2.2414.0 ACADEMIC" name="Network1" faultnameformat="nodestate">
@@ -82,7 +100,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>481 472 589 539</position>
+				<position>505 455 613 522</position>
 			</node>
 			<node id="ekran__boot_failure">
 				<name>ekran: boot failure</name>
@@ -117,7 +135,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>409 408 482 453</position>
+				<position>635 332 708 377</position>
 			</node>
 			<node id="Awaria_plyty_glownej">
 				<name>Awaria plyty glownej</name>
@@ -131,7 +149,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>443 248 516 293</position>
+				<position>683 223 756 268</position>
 			</node>
 			<node id="Awaria_systemu_operacyjnego">
 				<name>Awaria systemu operacyjnego</name>
@@ -139,6 +157,27 @@
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
 				<position>786 242 891 307</position>
+			</node>
+			<node id="Awaria_RAM">
+				<name>Awaria RAM</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>244 299 319 345</position>
+			</node>
+			<node id="Awaria_zasilacza">
+				<name>Awaria zasilacza</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>373 337 468 396</position>
+			</node>
+			<node id="Awaria_karty_graficznej">
+				<name>Awaria karty graficznej</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>311 112 404 170</position>
 			</node>
 		</genie>
 	</extensions>
