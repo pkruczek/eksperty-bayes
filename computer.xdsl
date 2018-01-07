@@ -2,7 +2,28 @@
 <!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
 <smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
 	<nodes>
+		<cpt id="Awaria_plyty_glownej">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_zasilacza">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
 		<cpt id="nie_wlacza_sie">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Awaria_plyty_glownej Awaria_zasilacza</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_RAM">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_karty_graficznej">
 			<state id="State0" />
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
@@ -10,9 +31,16 @@
 		<cpt id="czarny_ekran">
 			<state id="State0" />
 			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_RAM Awaria_karty_graficznej</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="slychac_wentylatory">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Awaria_RAM Awaria_zasilacza Awaria_karty_graficznej</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_HDD">
 			<state id="State0" />
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
@@ -20,63 +48,37 @@
 		<cpt id="ekran__boot_failure">
 			<state id="State0" />
 			<state id="State1" />
+			<parents>Awaria_HDD</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_systemu_operacyjnego">
+			<state id="State0" />
+			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="system_sie_laduje">
 			<state id="State0" />
 			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_systemu_operacyjnego</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="komunikat_bledu">
 			<state id="State0" />
 			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_systemu_operacyjnego</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="slychac_sygnaly_glosniczka_systemowego">
 			<state id="State0" />
 			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_plyty_glownej Awaria_karty_graficznej Awaria_RAM</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="slychac_stuk">
 			<state id="State0" />
 			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_plyty_glownej">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>slychac_sygnaly_glosniczka_systemowego nie_wlacza_sie</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_HDD">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>slychac_stuk ekran__boot_failure</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_systemu_operacyjnego">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>system_sie_laduje komunikat_bledu</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_RAM">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>slychac_wentylatory slychac_sygnaly_glosniczka_systemowego czarny_ekran</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_zasilacza">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>slychac_wentylatory nie_wlacza_sie</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_karty_graficznej">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>slychac_sygnaly_glosniczka_systemowego slychac_wentylatory czarny_ekran</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<parents>Awaria_HDD</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 	</nodes>
 	<extensions>
