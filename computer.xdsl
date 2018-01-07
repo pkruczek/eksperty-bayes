@@ -7,18 +7,39 @@
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="nie_wlacza_sie">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>Awaria_plyty_glownej</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="czarny_ekran">
+		<cpt id="Awaria_ramu">
 			<state id="State0" />
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
+		<cpt id="Awaria_zasilacza">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="nie_wlacza_sie">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="czarny_ekran">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
 		<cpt id="Awaria_GPU">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_systemu_operacyjnego">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Awaria_HDD">
 			<state id="State0" />
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
@@ -26,24 +47,14 @@
 		<cpt id="slychac_wentylatory">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_GPU</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_HDD">
-			<state id="State0" />
-			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_GPU Awaria_systemu_operacyjnego Awaria_HDD</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="ekran__boot_failure">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_HDD</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Awaria_systemu_operacyjnego">
-			<state id="State0" />
-			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
+			<parents>Awaria_HDD Awaria_systemu_operacyjnego</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="system_sie_laduje">
 			<state id="State0" />
@@ -51,7 +62,7 @@
 			<parents>Awaria_systemu_operacyjnego</parents>
 			<probabilities>0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="komunikat_bledu">
+		<cpt id="komunikat_bledu_os">
 			<state id="State0" />
 			<state id="State1" />
 			<parents>Awaria_systemu_operacyjnego</parents>
@@ -72,8 +83,8 @@
 		<cpt id="Copy_of_slychac_wentylatory">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_GPU</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+			<parents>Awaria_GPU Awaria_plyty_glownej</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Copy_2_of_slychac_wentylatory">
 			<state id="State0" />
@@ -81,28 +92,23 @@
 			<parents>Awaria_GPU</parents>
 			<probabilities>0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="Awaria_ramu">
-			<state id="State0" />
-			<state id="State1" />
-			<probabilities>0.5 0.5</probabilities>
-		</cpt>
 		<cpt id="random_blue_screen">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_ramu</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+			<parents>Awaria_ramu Awaria_systemu_operacyjnego Awaria_HDD</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="niepoprawne_wyswietlanie_ramu_w_ustawienieach">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_ramu</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+			<parents>Awaria_ramu Awaria_plyty_glownej</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="uszkodzone_pliki">
 			<state id="State0" />
 			<state id="State1" />
-			<parents>Awaria_ramu</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+			<parents>Awaria_ramu Awaria_systemu_operacyjnego Awaria_HDD</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 	</nodes>
 	<extensions>
@@ -112,126 +118,133 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>173 469 255 520</position>
+				<position>502 431 584 482</position>
 			</node>
 			<node id="czarny_ekran">
 				<name>czarny ekran</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>317 502 393 549</position>
+				<position>561 604 637 651</position>
 			</node>
 			<node id="slychac_wentylatory">
 				<name>slychac wentylatory</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>808 522 916 589</position>
+				<position>1014 227 1122 294</position>
 			</node>
 			<node id="ekran__boot_failure">
 				<name>ekran: boot failure</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>559 389 656 449</position>
+				<position>1033 531 1130 591</position>
 			</node>
 			<node id="system_sie_laduje">
 				<name>system sie laduje</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>724 318 817 376</position>
+				<position>720 109 813 167</position>
 			</node>
-			<node id="komunikat_bledu">
-				<name>komunikat bledu</name>
+			<node id="komunikat_bledu_os">
+				<name>komunikat bledu systemu operacyjnego</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>853 303 941 358</position>
+				<position>809 242 953 318</position>
 			</node>
 			<node id="slychac_sygnaly_glosniczka_systemowego">
 				<name>slychac sygnaly glosniczka systemowego</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>11 431 124 501</position>
+				<position>266 318 379 388</position>
 			</node>
 			<node id="slychac_stuk">
 				<name>slychac stuk</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>409 408 482 453</position>
+				<position>881 619 954 664</position>
 			</node>
 			<node id="Awaria_plyty_glownej">
 				<name>Awaria plyty glownej</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>141 233 228 287</position>
+				<position>384 561 471 615</position>
 			</node>
 			<node id="Awaria_HDD">
 				<name>Awaria HDD</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>443 248 516 293</position>
+				<position>933 548 1006 593</position>
 			</node>
 			<node id="Awaria_systemu_operacyjnego">
 				<name>Awaria systemu operacyjnego</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>748 189 853 254</position>
+				<position>906 78 1011 143</position>
 			</node>
 			<node id="Awaria_GPU">
 				<name>Awaria GPU</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1125 244 1198 289</position>
+				<position>1224 328 1297 373</position>
 			</node>
 			<node id="Copy_of_slychac_wentylatory">
 				<name>artefakty obrazu</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1068 536 1176 603</position>
+				<position>1063 331 1171 398</position>
 			</node>
 			<node id="Copy_2_of_slychac_wentylatory">
 				<name>zaklócenia obrazu</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1240 512 1348 579</position>
+				<position>1232 489 1340 556</position>
 			</node>
 			<node id="Awaria_ramu">
 				<name>Awaria ramu</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>561 515 636 561</position>
+				<position>561 68 636 114</position>
 			</node>
 			<node id="random_blue_screen">
 				<name>losowe blue screen</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>407 616 513 682</position>
+				<position>644 337 750 403</position>
 			</node>
 			<node id="uszkodzone_pliki">
 				<name>uszkodzone pliki</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>712 633 801 688</position>
+				<position>693 213 782 268</position>
 			</node>
 			<node id="niepoprawne_wyswietlanie_ramu_w_ustawienieach">
 				<name>niepoprawne wyswietlanie ramu w ustawienieach</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>518 663 642 740</position>
+				<position>441 226 565 303</position>
+			</node>
+			<node id="Awaria_zasilacza">
+				<name>Awaria zasilacza</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>710 628 805 687</position>
 			</node>
 		</genie>
 	</extensions>
