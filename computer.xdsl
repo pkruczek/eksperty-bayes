@@ -3,113 +3,126 @@
 <smile version="1.0" id="asd" numsamples="10000" discsamples="10000">
 	<nodes>
 		<cpt id="Awaria_plyty_glownej">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Awaria_ramu">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Awaria_zasilacza">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="nie_wlacza_sie">
-			<state id="State0" />
-			<state id="State1" />
+		<noisymax id="nie_wlacza_sie">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
+			<strengths>0 1 0 1 0 1</strengths>
+			<parameters>0.4 0.6 0 1 0.2 0.8 0 1 0.4 0.6 0 1 0.5 0.5</parameters>
+		</noisymax>
 		<cpt id="Awaria_GPU">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="czarny_ekran">
-			<state id="State0" />
-			<state id="State1" />
+		<noisymax id="czarny_ekran">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza Awaria_GPU</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
+			<strengths>0 1 0 1 0 1 0 1</strengths>
+			<parameters>0.3 0.7 0 1 0.09999999999999998 0.9 0 1 0.3 0.7 0 1 0.3 0.7 0 1 0.5 0.5</parameters>
+		</noisymax>
 		<cpt id="Awaria_systemu_operacyjnego">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Awaria_HDD">
-			<state id="State0" />
-			<state id="State1" />
+			<state id="TAK" />
+			<state id="NIE" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="slychac_wentylatory">
-			<state id="State0" />
-			<state id="State1" />
+		<noisymax id="slychac_wentylatory">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_GPU Awaria_systemu_operacyjnego Awaria_HDD</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="ekran__boot_failure">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1 0 1 0 1</strengths>
+			<parameters>0.2 0.8 0 1 0.5 0.5 0 1 0.3 0.7 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="ekran__boot_failure">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_HDD Awaria_systemu_operacyjnego</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="system_sie_laduje">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1 0 1</strengths>
+			<parameters>0.7 0.3 0 1 0.3 0.7 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="system_sie_laduje">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_systemu_operacyjnego</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="komunikat_bledu_os">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1</strengths>
+			<parameters>0.09999999999999998 0.9 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="komunikat_bledu_os">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_systemu_operacyjnego</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="slychac_sygnaly_glosniczka_systemowego">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1</strengths>
+			<parameters>0.9 0.09999999999999998 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="slychac_sygnaly_glosniczka_systemowego">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_plyty_glownej</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="slychac_stuk">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1</strengths>
+			<parameters>0.7 0.3 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="slychac_stuk">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_HDD</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Copy_of_slychac_wentylatory">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1</strengths>
+			<parameters>0.8 0.2 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="Copy_of_slychac_wentylatory">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_GPU Awaria_plyty_glownej</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="Copy_2_of_slychac_wentylatory">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1 0 1</strengths>
+			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="Copy_2_of_slychac_wentylatory">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_GPU</parents>
-			<probabilities>0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="random_blue_screen">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1</strengths>
+			<parameters>0.9 0.09999999999999998 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="random_blue_screen">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_ramu Awaria_systemu_operacyjnego Awaria_HDD</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="niepoprawne_wyswietlanie_ramu_w_ustawienieach">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1 0 1 0 1</strengths>
+			<parameters>0.2 0.8 0 1 0.6 0.4 0 1 0.2 0.8 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="niepoprawne_wyswietlanie_ramu_w_ustawienieach">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_ramu Awaria_plyty_glownej</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
-		<cpt id="uszkodzone_pliki">
-			<state id="State0" />
-			<state id="State1" />
+			<strengths>0 1 0 1</strengths>
+			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<noisymax id="uszkodzone_pliki">
+			<state id="TAK" />
+			<state id="NIE" />
 			<parents>Awaria_ramu Awaria_systemu_operacyjnego Awaria_HDD</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
+			<strengths>0 1 0 1 0 1</strengths>
+			<parameters>0.09999999999999998 0.9 0 1 0.4 0.6 0 1 0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
 	</nodes>
 	<extensions>
 		<genie version="1.0" app="GeNIe 2.2.2414.0 ACADEMIC" name="Network1" faultnameformat="nodestate">
