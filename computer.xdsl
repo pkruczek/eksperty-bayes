@@ -23,16 +23,16 @@
 			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
 			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="czarny_ekran">
-			<state id="State0" />
-			<state id="State1" />
-			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
-		</cpt>
 		<cpt id="Awaria_GPU">
 			<state id="State0" />
 			<state id="State1" />
 			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="czarny_ekran">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza Awaria_GPU</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Awaria_systemu_operacyjnego">
 			<state id="State0" />
