@@ -22,19 +22,19 @@
 			<state id="NIE" />
 			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza</parents>
 			<strengths>0 1 0 1 0 1</strengths>
-			<parameters>0.4 0.6 0 1 0.2 0.8 0 1 0.4 0.6 0 1 0.5 0.5</parameters>
+			<parameters>0.5 0.5 0 1 0.2 0.8 0 1 0.4 0.6 0 1 0.5 0.5</parameters>
 		</noisymax>
 		<cpt id="Awaria_GPU">
 			<state id="TAK" />
 			<state id="NIE" />
-			<probabilities>0.5 0.5</probabilities>
+			<probabilities>0.6 0.4</probabilities>
 		</cpt>
 		<noisymax id="czarny_ekran">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_plyty_glownej Awaria_ramu Awaria_zasilacza Awaria_GPU</parents>
 			<strengths>0 1 0 1 0 1 0 1</strengths>
-			<parameters>0.3 0.7 0 1 0.09999999999999998 0.9 0 1 0.3 0.7 0 1 0.3 0.7 0 1 0.5 0.5</parameters>
+			<parameters>0.4 0.6 0 1 0.09999999999999998 0.9 0 1 0.3 0.7 0 1 0.09999999999999998 0.9 0 1 0.5 0.5</parameters>
 		</noisymax>
 		<cpt id="Awaria_systemu_operacyjnego">
 			<state id="TAK" />
@@ -60,48 +60,43 @@
 			<strengths>0 1 0 1</strengths>
 			<parameters>0.7 0.3 0 1 0.3 0.7 0 1 0.5 0.5</parameters>
 		</noisymax>
-		<noisymax id="system_sie_laduje">
+		<cpt id="system_sie_laduje">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_systemu_operacyjnego</parents>
-			<strengths>0 1</strengths>
-			<parameters>0.09999999999999998 0.9 0 1 0.5 0.5</parameters>
-		</noisymax>
-		<noisymax id="komunikat_bledu_os">
+			<probabilities>0.6 0.4 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="komunikat_bledu_os">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_systemu_operacyjnego</parents>
-			<strengths>0 1</strengths>
-			<parameters>0.9 0.09999999999999998 0 1 0.5 0.5</parameters>
-		</noisymax>
-		<noisymax id="slychac_sygnaly_glosniczka_systemowego">
+			<probabilities>0.95 0.04999999999999999 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="slychac_sygnaly_glosniczka_systemowego">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_plyty_glownej</parents>
-			<strengths>0 1</strengths>
-			<parameters>0.7 0.3 0 1 0.5 0.5</parameters>
-		</noisymax>
-		<noisymax id="slychac_stuk">
+			<probabilities>0.6 0.4 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="slychac_stuk">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_HDD</parents>
-			<strengths>0 1</strengths>
-			<parameters>0.8 0.2 0 1 0.5 0.5</parameters>
-		</noisymax>
+			<probabilities>0.7 0.3 0.9 0.1</probabilities>
+		</cpt>
 		<noisymax id="Copy_of_slychac_wentylatory">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_GPU Awaria_plyty_glownej</parents>
 			<strengths>0 1 0 1</strengths>
-			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.5 0.5</parameters>
+			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.2000000000000001 0.7999999999999999</parameters>
 		</noisymax>
-		<noisymax id="Copy_2_of_slychac_wentylatory">
+		<cpt id="Copy_2_of_slychac_wentylatory">
 			<state id="TAK" />
 			<state id="NIE" />
 			<parents>Awaria_GPU</parents>
-			<strengths>0 1</strengths>
-			<parameters>0.9 0.09999999999999998 0 1 0.5 0.5</parameters>
-		</noisymax>
+			<probabilities>0.95 0.04999999999999999 0.9500000000000001 0.05</probabilities>
+		</cpt>
 		<noisymax id="random_blue_screen">
 			<state id="TAK" />
 			<state id="NIE" />
@@ -114,7 +109,7 @@
 			<state id="NIE" />
 			<parents>Awaria_ramu Awaria_plyty_glownej</parents>
 			<strengths>0 1 0 1</strengths>
-			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.5 0.5</parameters>
+			<parameters>0.8 0.2 0 1 0.2 0.8 0 1 0.2 0.8</parameters>
 		</noisymax>
 		<noisymax id="uszkodzone_pliki">
 			<state id="TAK" />
@@ -180,7 +175,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>881 619 954 664</position>
+				<position>881 618 954 663</position>
 			</node>
 			<node id="Awaria_plyty_glownej">
 				<name>Awaria plyty glownej</name>
@@ -218,7 +213,7 @@
 				<position>1063 331 1171 398</position>
 			</node>
 			<node id="Copy_2_of_slychac_wentylatory">
-				<name>zaklócenia obrazu</name>
+				<name>zaklï¿½cenia obrazu</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -229,7 +224,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>561 68 636 114</position>
+				<position>559 66 634 112</position>
 			</node>
 			<node id="random_blue_screen">
 				<name>losowe blue screen</name>
@@ -243,7 +238,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>693 213 782 268</position>
+				<position>703 210 792 265</position>
 			</node>
 			<node id="niepoprawne_wyswietlanie_ramu_w_ustawienieach">
 				<name>niepoprawne wyswietlanie ramu w ustawienieach</name>
@@ -262,3 +257,4 @@
 		</genie>
 	</extensions>
 </smile>
+
