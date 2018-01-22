@@ -1,7 +1,10 @@
 package pl.edu.agh.se.run;
 
+import pl.edu.agh.se.run.gui.ComputerDoctor;
 import pl.edu.agh.se.run.license.JsmileLicense;
 import smile.Network;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -11,10 +14,17 @@ public class Main {
         checkLibraryPath();
         
         Network net = new Network();
+        ComputerDoctor.startGui(net);
         net.readFile("computer.xdsl");
         net.updateBeliefs();
+        process(net);
 
-        System.out.println("Hello World");
+    }
+
+    private static void process(Network net) {
+        for (String nodeId : net.getAllNodeIds()) {
+            System.out.println(nodeId + ": " + Arrays.toString(net.getOutcomeIds(nodeId)));
+        }
     }
 
     private static void checkLibraryPath() {
