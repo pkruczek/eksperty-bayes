@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="ScN__M_killed_L_with_hammer_because_of_cannabis">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="M_was_suspect_in_cannabis_case">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__M_killed_L_with_hammer_because_of_cannabis</parents>
+			<probabilities>1 0 0.0009 0.9991</probabilities>
+		</cpt>
+		<cpt id="ScN__B_killed_hammer_because_of_cannabis">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="B_and_M_were_suspects_in_cannabis_case">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__B_killed_hammer_because_of_cannabis</parents>
+			<probabilities>1 0 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="M_used_L_as_front">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__B_killed_hammer_because_of_cannabis ScN__M_killed_L_with_hammer_because_of_cannabis M_was_suspect_in_cannabis_case B_and_M_were_suspects_in_cannabis_case</parents>
+			<probabilities>1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0.3 0.7 0.3 0.7 0.3 0.7 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="M_drugged_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_used_L_as_front</parents>
+			<probabilities>1 0 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="M_had_a_false_contract">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_used_L_as_front</parents>
+			<probabilities>1 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="L_signed_form">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_used_L_as_front M_drugged_L M_had_a_false_contract</parents>
+			<probabilities>1 0 1 0 1 0 1 0 0.9 0.1 0.5 0.5 0.1 0.9 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="M_killed_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__M_killed_L_with_hammer_because_of_cannabis M_used_L_as_front</parents>
+			<probabilities>1 0 1 0 0.1 0.9 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="M_and_B_moved_Ls_body">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__M_killed_L_with_hammer_because_of_cannabis M_killed_L M_was_suspect_in_cannabis_case</parents>
+			<probabilities>1 0 1 0 1 0 1 0 0.001 0.999 0.01 0.99 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="M_moved_L_s_body_to_the_door">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_and_B_moved_Ls_body</parents>
+			<probabilities>1 0 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="M_gave_L_Temazepam">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_drugged_L</parents>
+			<probabilities>1 0 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="M_gave_L_grog">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_drugged_L</parents>
+			<probabilities>1 0 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="L_was_in_state_of_impotence">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_drugged_L M_gave_L_Temazepam M_gave_L_grog</parents>
+			<probabilities>1 0 1 0 1 0 1 0 0.99 0.01 0.9 0.1 0.99 0.01 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="M_hit_L_in_the_head_with_a_hammer">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_killed_L</parents>
+			<probabilities>1 0 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="M_hit_L_on_head_with_hammer">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_hit_L_in_the_head_with_a_hammer</parents>
+			<probabilities>0.5 0.5 0 1</probabilities>
+		</cpt>
+		<cpt id="B_killed_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__B_killed_hammer_because_of_cannabis B_and_M_were_suspects_in_cannabis_case M_used_L_as_front</parents>
+			<probabilities>1 0 1 0 1 0 1 0 0.01 0.99 0.001 0.999 0.0001 0.9999 0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="B_moved_L_s_body">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__B_killed_hammer_because_of_cannabis B_killed_L</parents>
+			<probabilities>1 0 1 0 0.5 0.5 0 1</probabilities>
+		</cpt>
+		<cpt id="B_hit_L_in_the_head_with_a_hammer">
+			<state id="T" />
+			<state id="F" />
+			<parents>B_killed_L</parents>
+			<probabilities>1 0 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="M_hit_L_on_head_with_stone">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_hit_L_in_the_head_with_a_hammer M_hit_L_on_head_with_hammer</parents>
+			<probabilities>0 1 1 0 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="L_had_fractured_skull_and_brain_damage">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_killed_L B_killed_L M_hit_L_in_the_head_with_a_hammer B_hit_L_in_the_head_with_a_hammer</parents>
+			<probabilities>1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0.99 0.01 0.99 0.01 0.99 0.01 0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="L_died">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_killed_L B_killed_L L_had_fractured_skull_and_brain_damage</parents>
+			<probabilities>1 0 1 0 1 0 1 0 1 0 1 0 0.999 0.001 0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="M_went_to_get_B">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_and_B_moved_Ls_body M_moved_L_s_body_to_the_door</parents>
+			<probabilities>1 0 1 0 0.01 0.99 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="B_and_M_moved_Ls_body_to_front_yard">
+			<state id="T" />
+			<state id="F" />
+			<parents>M_and_B_moved_Ls_body M_went_to_get_B</parents>
+			<probabilities>1 0 1 0 0.001 0.999 0 1</probabilities>
+		</cpt>
+		<cpt id="Acc">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="Suspected_cannabis_operation">
+			<state id="T" />
+			<state id="F" />
+			<parents>Acc M_was_suspect_in_cannabis_case B_and_M_were_suspects_in_cannabis_case</parents>
+			<probabilities>0.9 0.1 0.9 0.1 0.9 0.1 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="CONSTRAINT">
+			<state id="MkilledL" />
+			<state id="BkilledL" />
+			<state id="NA" />
+			<parents>ScN__M_killed_L_with_hammer_because_of_cannabis ScN__B_killed_hammer_because_of_cannabis</parents>
+			<probabilities>0 0 1 1 0 0 0 1 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Copy_11_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="W_s_testimony__M_gave_L_grog">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_11_of_Accuracy M_gave_L_grog</parents>
+			<probabilities>0.99 0.01 0.1 0.9 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="W_s_testimony__L_s_feet_dragged">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_11_of_Accuracy M_moved_L_s_body_to_the_door</parents>
+			<probabilities>0.8 0.2 0.1 0.9 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Contract_with_Ls_signature">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_of_Accuracy L_signed_form</parents>
+			<probabilities>0.999 0.001 0.001 0.999 0.1 0.9 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Copy_3_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="Empty_strips_of_Temazepam">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_3_of_Accuracy M_gave_L_Temazepam</parents>
+			<probabilities>0.9 0.1 0.1 0.9 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Copy_4_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="Autopsy">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_4_of_Accuracy L_died L_had_fractured_skull_and_brain_damage</parents>
+			<probabilities>0.999 0.001 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.9 0.9 0.1 0.9 0.1 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Copy_5_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.999 0.001</probabilities>
+		</cpt>
+		<cpt id="B_hit_L_with_hammer">
+			<state id="T" />
+			<state id="F" />
+			<parents>B_hit_L_in_the_head_with_a_hammer</parents>
+			<probabilities>0.5 0.5 0 1</probabilities>
+		</cpt>
+		<cpt id="DNA_match_blood_on_hammer_with_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_5_of_Accuracy M_hit_L_on_head_with_hammer B_hit_L_with_hammer</parents>
+			<probabilities>0.999 0.001 0.999 0.001 0.999 0.001 0.0005 0.9995000000000001 0.1 0.9 0.1 0.9 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_6_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.999 0.001</probabilities>
+		</cpt>
+		<cpt id="DNA_match_blood_in_hallway">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_6_of_Accuracy M_hit_L_in_the_head_with_a_hammer B_hit_L_in_the_head_with_a_hammer</parents>
+			<probabilities>0.999 0.001 0.999 0.001 0.999 0.001 0.001 0.999 0.1 0.9 0.1 0.9 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_7_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Trail_of_feet_dragged">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_7_of_Accuracy B_and_M_moved_Ls_body_to_front_yard B_moved_L_s_body</parents>
+			<probabilities>0.9 0.1 0.9 0.1 0.9 0.1 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_8_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Ls_body_in_front_yard">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_8_of_Accuracy B_and_M_moved_Ls_body_to_front_yard B_moved_L_s_body</parents>
+			<probabilities>0.99 0.01 0.99 0.01 0.99 0.01 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Accuracy_of_Beekman">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__B_killed_hammer_because_of_cannabis</parents>
+			<probabilities>0 1 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="B_s_testimony__M_threw_stone">
+			<state id="T" />
+			<state id="F" />
+			<parents>Accuracy_of_Beekman M_hit_L_on_head_with_stone</parents>
+			<probabilities>0.8 0.2 0.2 0.8 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_9_of_Accuracy">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="Tox__report">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_9_of_Accuracy L_was_in_state_of_impotence M_gave_L_Temazepam M_gave_L_grog</parents>
+			<probabilities>0.999 0.001 0.99 0.01 0.9 0.1 0.5 0.5 0.9 0.1 0.7 0.3 0.1 0.9 0.01 0.99 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="W_s_testimony__images">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_11_of_Accuracy M_hit_L_in_the_head_with_a_hammer</parents>
+			<probabilities>0.9 0.1 0.8 0.2 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="B_s_testimony__bloody_trail">
+			<state id="T" />
+			<state id="F" />
+			<parents>Accuracy_of_Beekman M_moved_L_s_body_to_the_door</parents>
+			<probabilities>0.9 0.1 0.001 0.999 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Copy_3_of_acc">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Tasman_fake_contract">
+			<state id="T" />
+			<state id="F" />
+			<parents>Copy_3_of_acc M_had_a_false_contract</parents>
+			<probabilities>0.99 0.01 0.01 0.99 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="B_hit_L_with_stone">
+			<state id="T" />
+			<state id="F" />
+			<parents>B_hit_L_in_the_head_with_a_hammer B_hit_L_with_hammer</parents>
+			<probabilities>0 1 1 0 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="Acc_2">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="no_bloody_trail_found">
+			<state id="T" />
+			<state id="F" />
+			<parents>Acc_2 M_moved_L_s_body_to_the_door</parents>
+			<probabilities>0.01 0.99 1 0 0.9 0.1 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="B_Ls_body_by_door">
+			<state id="T" />
+			<state id="F" />
+			<parents>Accuracy_of_Beekman M_moved_L_s_body_to_the_door</parents>
+			<probabilities>0.99 0.01 0.01 0.99 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Accuracy_of_Marjan">
+			<state id="T" />
+			<state id="F" />
+			<parents>ScN__M_killed_L_with_hammer_because_of_cannabis</parents>
+			<probabilities>0.01 0.99 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="M_s_testimony__did_not_kill_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>Accuracy_of_Marjan M_killed_L</parents>
+			<probabilities>0.01 0.99 0.99 0.01 0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="B_s_testimony__Msaid_she_killed_L">
+			<state id="T" />
+			<state id="F" />
+			<parents>Accuracy_of_Beekman M_killed_L</parents>
+			<probabilities>0.9 0.1 0.1 0.9 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="B_s_testimony__M_and_B_dragged_L_to_front_yard">
+			<state id="T" />
+			<state id="F" />
+			<parents>B_and_M_moved_Ls_body_to_front_yard Accuracy_of_Beekman</parents>
+			<probabilities>0.99 0.01 0.01 0.99 0.1 0.9 0.9 0.1</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.5219.0" name="Network1" faultnameformat="nodestate">
+			<node id="ScN__M_killed_L_with_hammer_because_of_cannabis">
+				<name>ScN: M killed L with hammer because of cannabis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>708 5 847 91</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_was_suspect_in_cannabis_case">
+				<name>M had a cannabis operation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>335 129 443 196</position>
+				<barchart active="true" />
+			</node>
+			<node id="ScN__B_killed_hammer_because_of_cannabis">
+				<name>ScN: B killed hammer because of cannabis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1488 5 1620 87</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_and_M_were_suspects_in_cannabis_case">
+				<name>B and M had a cannabis operation together</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1245 174 1353 241</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_used_L_as_front">
+				<name>M used L as front</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>484 253 602 326</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_drugged_L">
+				<name>M drugged L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>272 461 345 506</position>
+				<barchart active="true" />
+			</node>
+			<node id="L_signed_form">
+				<name>L signed contract</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>474 392 552 440</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_killed_L">
+				<name>M killed L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>753 316 858 381</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_and_B_moved_Ls_body">
+				<name>M and B moved Ls body</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1061 213 1166 278</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_had_a_false_contract">
+				<name>M had a false contract</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>278 316 367 371</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_gave_L_Temazepam">
+				<name>M gave L Temazepam</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>67 654 150 705</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="M_gave_L_grog">
+				<name>M gave L grog</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>523 551 603 601</position>
+				<barchart active="true" />
+			</node>
+			<node id="L_was_in_state_of_impotence">
+				<name>L was in state of impotence</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>340 693 433 751</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="M_hit_L_in_the_head_with_a_hammer">
+				<name>M hit L on the head with a hammer/stone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>685 482 786 545</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_hit_L_on_head_with_hammer">
+				<name>M hit L with hammer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>583 662 676 720</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_killed_L">
+				<name>B killed L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1519 279 1624 344</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_hit_L_in_the_head_with_a_hammer">
+				<name>B hit L on the head with a hammer/stone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1442 447 1541 508</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_hit_L_on_head_with_stone">
+				<name>M hit L with stone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>728 655 821 713</position>
+				<barchart active="true" />
+			</node>
+			<node id="L_had_fractured_skull_and_brain_damage">
+				<name>L had fractured skull and brain damage</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 515 932 582</position>
+				<barchart active="true" />
+			</node>
+			<node id="L_died">
+				<name>L died</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>957 463 1003 491</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_went_to_get_B">
+				<name>M went to get B</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1058 388 1146 443</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_and_M_moved_Ls_body_to_front_yard">
+				<name>B and M moved L&apos;s body to front yard</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1185 324 1301 396</position>
+				<barchart active="true" />
+			</node>
+			<node id="Acc">
+				<name>Acc</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>617 961 658 986</position>
+				<barchart active="true" />
+			</node>
+			<node id="Suspected_cannabis_operation">
+				<name>Suspected cannabis operation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>653 1017 761 1084</position>
+				<barchart active="true" />
+			</node>
+			<node id="CONSTRAINT">
+				<name>CONSTRAINT</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1119 77 1195 124</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_11_of_Accuracy">
+				<name>Acc of Waanders</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>248 1095 310 1133</position>
+				<barchart active="true" />
+			</node>
+			<node id="W_s_testimony__M_gave_L_grog">
+				<name>W&apos;s testimony: M gave L grog</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>50 1155 151 1218</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="W_s_testimony__L_s_feet_dragged">
+				<name>W&apos;s testimony: L&apos;s feet dragged</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>413 1144 518 1209</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Copy_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>475 942 537 980</position>
+				<barchart active="true" />
+			</node>
+			<node id="Contract_with_Ls_signature">
+				<name>Contract with L&apos;s signature</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>339 1009 440 1072</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_3_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>195 808 257 846</position>
+				<barchart active="true" />
+			</node>
+			<node id="Empty_strips_of_Temazepam">
+				<name>Empty strips of Temazepam</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>31 831 114 882</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Copy_4_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1280 804 1342 842</position>
+				<barchart active="true" />
+			</node>
+			<node id="Autopsy">
+				<name>Autopsy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1216 891 1272 926</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_5_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>773 929 835 967</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_hit_L_with_hammer">
+				<name>B hit L with hammer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1330 544 1434 609</position>
+				<barchart active="true" />
+			</node>
+			<node id="DNA_match_blood_on_hammer_with_L">
+				<name>DNA match blood on hammer with L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>841 993 934 1051</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_6_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>784 1087 846 1125</position>
+				<barchart active="true" />
+			</node>
+			<node id="DNA_match_blood_in_hallway">
+				<name>DNA match blood in hallway</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>833 1155 926 1213</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_7_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1150 1182 1212 1220</position>
+				<barchart active="true" />
+			</node>
+			<node id="Trail_of_feet_dragged">
+				<name>Trail of feet dragged</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1207 1090 1289 1141</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Copy_8_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1606 699 1668 737</position>
+				<barchart active="true" />
+			</node>
+			<node id="Ls_body_in_front_yard">
+				<name>L&apos;s body in front yard</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1448 770 1530 821</position>
+				<barchart active="true" />
+			</node>
+			<node id="Accuracy_of_Beekman">
+				<name>Accuracy of Beekman</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1639 1151 1721 1202</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_s_testimony__M_threw_stone">
+				<name>B&apos;s testimony: M threw stone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1452 1300 1557 1365</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_9_of_Accuracy">
+				<name>Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>477 813 539 851</position>
+				<barchart active="true" />
+			</node>
+			<node id="Tox__report">
+				<name>Tox. report</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>367 884 433 925</position>
+				<barchart active="true" />
+			</node>
+			<node id="W_s_testimony__images">
+				<name>W&apos;s testimony: images</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>262 1219 355 1277</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_s_testimony__bloody_trail">
+				<name>B&apos;s testimony: bloody trail</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1355 1180 1460 1245</position>
+				<barchart active="true" />
+			</node>
+			<node id="Copy_3_of_acc">
+				<name>Acc of Tasman</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>73 927 113 952</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Tasman_fake_contract">
+				<name>Tasman: fake contract</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>148 993 245 1053</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_hit_L_with_stone">
+				<name>B hit L with stone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1548 554 1643 613</position>
+				<barchart active="true" />
+			</node>
+			<node id="Acc_2">
+				<name>Acc</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1029 922 1070 947</position>
+				<barchart active="true" />
+			</node>
+			<node id="no_bloody_trail_found">
+				<name>no bloody trail found</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1088 967 1196 1034</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_Ls_body_by_door">
+				<name>B: L&apos;s body by door</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1427 1086 1532 1151</position>
+				<barchart active="true" />
+			</node>
+			<node id="Accuracy_of_Marjan">
+				<name>Accuracy of Marjan</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>537 1078 643 1144</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="M_s_testimony__did_not_kill_L">
+				<name>M&apos;s testimony: did not kill L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>641 1184 738 1244</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="B_s_testimony__Msaid_she_killed_L">
+				<name>B&apos;s testimony: Msaid she killed L</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1533 910 1638 975</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_s_testimony__M_and_B_dragged_L_to_front_yard">
+				<name>B&apos;s testimony: M and B dragged L to front yard</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1736 1036 1849 1106</position>
+				<barchart active="true" />
+			</node>
+			<node id="M_moved_L_s_body_to_the_door">
+				<name>M moved L&apos;s body to the door</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>905 326 1006 389</position>
+				<barchart active="true" />
+			</node>
+			<node id="B_moved_L_s_body">
+				<name>B moved L&apos;s body</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1745 214 1842 274</position>
+				<barchart active="true" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
